@@ -1,6 +1,12 @@
-import { Search, ShoppingCart, User, Menu } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -45,6 +51,51 @@ const Header = () => {
 
         {/* User Actions */}
         <div className="flex items-center space-x-2">
+          {/* Language Selector */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="hidden sm:flex items-center space-x-1">
+                <Globe className="h-4 w-4" />
+                <span className="text-sm">EN</span>
+                <ChevronDown className="h-3 w-3" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>English</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>हिंदी (Hindi)</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>বাংলা (Bengali)</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>தமிழ் (Tamil)</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>తెలుగు (Telugu)</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>मराठी (Marathi)</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>ગુજરાતી (Gujarati)</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center space-x-3">
+                <span className="text-sm">🇮🇳</span>
+                <span>ಕನ್ನಡ (Kannada)</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <Button variant="ghost" size="icon" className="relative">
             <ShoppingCart className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
